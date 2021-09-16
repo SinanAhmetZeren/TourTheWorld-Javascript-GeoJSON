@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+    <!-- prettier-ignore -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <!-- prettier-ignore -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""     />
+    <!-- prettier-ignore -->
+    <script defer src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin="" ></script>
+    <script defer type="module" src="script.js"></script>
+    <script defer type="module" src="data.js"></script>
+
+    <!-- <script defer src="async await.js"></script> -->
+    <!-- prettier-ignore -->
+    <link  rel="stylesheet"    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="main-screen">
+      <div class="dashboard-item dashboard-flag">
+        <img id="flag-image" src="/img/img2.jpg" alt="" />
+      </div>
+      <div
+        class="dashboard-item dashboard-neighbours"
+        id="dashboard-neighbours"
+      ></div>
+      <div class="dashboard-item dashboard-answer">
+        <div class="input-div">
+          <input class="input" id="input" type="number" />
+          <!-- <input type="text" placeholder="Type something..." id="myInput">
+          <button type="button" onclick="getInputValue();">Get Value</button> -->
+        </div>
+        <button class="btn btn-car" id="button_car">Hitchhike 👍🚗</button>
+        <button class="btn btn-plane" id="button_plane">
+          Take a flight ✈️
+        </button>
+        <div id="countries-visited">Countries visited:</div>
+        <div id="flights-taken">Flights taken:</div>
+      </div>
+      <div class="country-card">
+        <div id="name1">Country Name</div>
+        <div id="name2">&nbsp</div>
+        <div id="capital1">Capital</div>
+        <div id="capital2">&nbsp</div>
+        <div id="population1">Population</div>
+        <div id="population2">&nbsp</div>
+        <div id="currency1">Currency</div>
+        <div id="currency2">&nbsp</div>
+        <div id="languages1">Language</div>
+        <div id="languages2">&nbsp</div>
+        <div id="area1">Area</div>
+        <div id="area2">&nbsp</div>
+      </div>
+      <div class="map-container">
+        <div class="map" id="map"></div>
+        <button class="itinerary" id="itinerary">Itinerary</button>
+      </div>
+      <div>
+        <div id="airplane" class="airplane">
+          <!-- <img src="/img/tenor.gif" alt="" /> -->
+        </div>
+        <div id="car" class="car">
+          <!-- <img src="/img/tenor.gif" alt="" /> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="modal modal-1 hidden" id="modal">
+      <h1>Itinerary</h1>
+      <button class="close-modal">🏃 OK</button>
+      <div id="travel-list"></div>
+    </div>
+  </body>
+
+  <script defer type="module" src="geojson.js"></script>
+
+</html>
+<!-- <img style="width: 3rem" src="" alt="" /> -->

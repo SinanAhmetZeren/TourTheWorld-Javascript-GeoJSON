@@ -1,0 +1,344 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  background-image: linear-gradient(
+      0deg,
+      rgba(34, 195, 157, 0.329) 0%,
+      rgba(45, 69, 253, 0.418) 100%
+    ),
+    url("/img/world\ map.png");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.main-screen {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr;
+  margin: 2rem 3rem;
+  gap: 3rem;
+}
+
+/* dashboard-flag */
+/* dashboard-neighbours */
+/* dashboard-answer */
+/* map-container */
+/****************************/
+/*-- DASHBOARD SECTION -----*/
+/****************************/
+.dashboard-item {
+  height: 19rem;
+  border-radius: 2rem;
+  background-color: rgba(99, 170, 148, 0.5);
+  box-shadow: rgba(141, 148, 207, 0.603) 0px -2px 15px 0px inset;
+  font-size: 1.8rem;
+  font-weight: 800;
+  align-self: center;
+}
+
+.dashboard-flag {
+  justify-self: center;
+  grid-column: 1;
+  width: 80%;
+  overflow: hidden;
+  box-shadow: rgba(46, 61, 194, 0.404) 0px -2px 25px 10px;
+}
+
+.dashboard-flag img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.dashboard-neighbours {
+  grid-column: 2;
+  padding: 2rem;
+  text-align: center;
+  background-color: rgba(99, 170, 148, 0.384);
+}
+
+.dashboard-neighbours div {
+  background-color: #bcdbd6;
+  color: #2f5851;
+  border-radius: 1rem;
+  padding: 0 0 1rem 0;
+}
+
+.dashboard-answer {
+  grid-column: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+  font-size: 1rem;
+}
+.map-container {
+  grid-column: 2 / -1;
+  border-radius: 20px;
+  position: relative;
+  background-image: linear-gradient(
+    0deg,
+    rgba(34, 195, 157, 0.329) 0%,
+    rgba(45, 69, 253, 0.418) 100%
+  ),
+  url("/img/loading.jpg");
+  background-size: cover;
+}
+#map {
+  box-shadow: rgba(46, 60, 194, 0.932) 0px -2px 15px 0px;
+  border-radius: 20px;
+}
+
+.dashboard-neighbours {
+  font-size: 2rem;
+  line-height: 3rem;
+  box-shadow: rgba(46, 60, 194, 0.932) 0px -2px 15px 0px inset;
+}
+
+.dashboard-answer {
+  font-size: 2rem;
+  box-shadow: rgba(46, 60, 194, 0.932) 0px -2px 15px 0px inset;
+
+  line-height: 4rem;
+}
+
+.input-div {
+  grid-column: 1 / -1;
+}
+
+.input {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  /* text-transform: uppercase; */
+}
+
+.input::placeholder {
+  color: #333;
+}
+
+/****************************/
+/*------ MAP SECTION -------*/
+/****************************/
+
+.map-container {
+  /* height: auto; */
+  opacity: 1;
+}
+
+.map {
+  height: 100%;
+  background-color: rgba(99, 170, 148, 0.699);
+  border: 3px solid slateblue;
+}
+
+/****************************/
+/*------- POPUPS -----------*/
+/****************************/
+.leaflet-popup .leaflet-popup-content-wrapper {
+  /* background-color: green; */
+  /* color: white; */
+  padding: 0 important!;
+  border-radius: 5px;
+  padding-right: 0;
+  background-color: rgba(255, 255, 255, 0.801);
+  /* border: 3px solid yellow; */
+}
+
+/* .leaflet-popup .leaflet-popup-content {
+  font-size: 1.5rem;
+} */
+
+/* .leaflet-popup .leaflet-popup-tip {
+  background-color: var(--color-dark--1);
+} */
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 9px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s;
+  /* grid-column: 1 / -1; */
+}
+
+.btn-car {
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+.btn-plane {
+  margin: 0.5rem 0 0.5rem 0.5rem;
+}
+
+#countries-visited,
+#flights-taken {
+  padding: 0rem 0rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: #333;
+  border: none;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  align-self: center;
+  justify-content: center;
+}
+
+#countries-visited {
+  margin: 0 1rem 0 0;
+}
+
+#countries-visited {
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+#flights-taken {
+  margin: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.country-card {
+  background-color: rgba(99, 170, 148, 0.699);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: rgba(46, 60, 194, 0.932) 0px -2px 15px 0px inset;
+}
+
+.country-card div {
+  font-size: 1.8rem;
+  padding: 1rem;
+  margin: 1rem;
+  font-weight: 800;
+  background-color: #bcdbd6;
+
+  align-self: center;
+  box-shadow: rgba(243, 210, 173, 0.25) 0px -2px 15px 0px inset;
+  color: #2f5851;
+}
+
+.country-card div:nth-child(2n) {
+  border-radius: 0 1rem 1rem 0;
+  /* color: #05947c; */
+  /* text-shadow: 1px 0 #023f35; */
+}
+
+.country-card div:nth-child(2n + 1) {
+  border-radius: 1rem 0 0 1rem;
+  text-align: end;
+}
+
+.airplane,
+.car {
+  position: absolute;
+  top: 50%;
+  right: 45%;
+  z-index: 999;
+  opacity: 1;
+  transition: all 1.5s;
+}
+
+.animatePosition {
+  /* transition-delay: 2s; */
+  position: absolute;
+  top: 50%;
+  right: 05%;
+}
+
+.animateOpacity {
+  opacity: 0;
+}
+
+.itinerary {
+  position: absolute;
+  right: 3%;
+  top: 6%;
+  z-index: 999;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 9px;
+  box-shadow: rgba(46, 60, 194, 0.932) 0px 0px 5px 0px inset;
+  box-shadow: rgba(46, 60, 194, 0.932) 0px 0px 5px 2px;
+}
+
+/* ///////// MODAL //////// */
+
+.modal {
+  position: absolute;
+  top: 35%;
+  left: 2%;
+  width: 30%;
+  height: 60%;
+  background-color: white;
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(66, 81, 212, 0.603) 0px -2px 10px 2px inset;
+  overflow: scroll;
+}
+
+.modal h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #3e0252;
+}
+
+.close-modal {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 5px;
+  border: 3px solid #3e0252;
+  border-radius: 5px;
+  background-color: rgba(45, 69, 253, 0.418);
+  color: #3e0252;
+}
+
+.hidden {
+  opacity: 0;
+  z-index: -1000;
+}
+
+.travel-item {
+  font-size: 1.5rem;
+  padding: 0.3rem;
+  margin: 1rem;
+  font-weight: 800;
+  background-color: #bcdbd6;
+  align-self: center;
+  color: #2f5851;
+  text-align: center;
+  border-radius: 0.8rem;
+}
+
+.travel-item:first-of-type {
+  margin-top: 2rem;
+}
